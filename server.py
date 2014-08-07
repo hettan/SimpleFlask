@@ -1,5 +1,5 @@
 from flask import Flask
-from flask import Request
+from flask import request
 
 app = Flask(__name__)
 @app.route("/") 
@@ -13,7 +13,7 @@ def hej(name):
 @app.route("/say_hej") 
 def say_hej():
     name = request.args.get("name")
-    return name
+    return hej(name)
 
 
 if __name__ == "__main__":
