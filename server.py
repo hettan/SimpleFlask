@@ -13,8 +13,13 @@ def hej(name):
 @app.route("/say_hej") 
 def say_hej():
     name = request.args.get("name")
-    return hej(name)
+    hep = request.args.get("hep");
+    return hej(name) + " " + hep
 
-
+@app.route("/hej_count")
+def hej_count():
+    times = request.args.get("times")
+    return "HEEE "*int(times)
+    
 if __name__ == "__main__":
     app.run()
